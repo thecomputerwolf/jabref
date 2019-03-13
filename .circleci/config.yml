@@ -35,6 +35,8 @@ jobs:
       - run: scripts/extract-install4j.sh
       - run: install4j7/bin/install4jc --verbose --license=$INSTALL4J_KEY
       - run: ./gradlew -Pdev=true -Pinstall4jDir="install4j7" test -i
+      - store_test_results:
+          path: test-results
 
   buildDev:
     docker:
